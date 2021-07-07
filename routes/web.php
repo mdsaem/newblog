@@ -20,6 +20,11 @@ Route::get('/', function () {
 
 Route::get('about','HomeController@index');
 Route::get('contruct','ContractController@contruct');
+Route::get('users','UserController@user');
+Route::get('users/{id}','UserController@show');
+Route::get('users/{id}/edit','UserController@edit');
+Route::get('users/{id}/delete','UserController@delete');
+Route::get('create-user','UserController@create');
     
 
 
