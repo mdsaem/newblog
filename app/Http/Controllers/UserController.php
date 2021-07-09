@@ -8,17 +8,36 @@ use App\User;
 class UserController extends Controller
 {
 
+public function create(){
+	
+	return view('create_user');
+}
+
+public function store(){
+   return "added user";
+}
+
+public function update(){
+   return "update user";
+}
+
+public function index(){
+		$users=User::all();
+		return $users;
+	}
+
 
 public function show($id){
 	$user= User::find($id);
 	return $user;
 }
 
-	public function user(){
-		$users=User::all();
-		return $users;
-	}
-    public function create(){
+	
+	/*public function store(){
+		
+		return "added user";
+	}*/
+    /*public function create(){
     	$data=[
                 'name'=>'Mr Shamim',
                 'email'=>'shamim@gmail.com',
@@ -43,7 +62,7 @@ public function show($id){
     	User::create($data);
     	return("create a User");
     	
-    }
+    }*/
 
     public function edit($id){
     	$user=User::find($id);
